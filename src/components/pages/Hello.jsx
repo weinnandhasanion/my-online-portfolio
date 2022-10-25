@@ -1,4 +1,4 @@
-import { chakra, Box, Button } from '@chakra-ui/react';
+import { chakra, Box, Button, Heading } from '@chakra-ui/react';
 import Typewriter from 'typewriter-effect';
 import portrait from 'assets/img/portrait.png';
 import { FRONTEND_DEV, NAME_HEADING, SOFTWARE_ENGR } from 'util/constants';
@@ -20,9 +20,9 @@ const LandingSection = () => {
       }}
     >
       <Box sx={{ m: '12rem 10%' }}>
-        <chakra.h1 fontSize="7xl" fontWeight="900" sx={{ wordBreak: 'none' }}>
+        <Heading fontSize="7xl" sx={{ wordBreak: 'none', fontWeight: 900 }}>
           {NAME_HEADING.toUpperCase()}
-        </chakra.h1>
+        </Heading>
         <chakra.h2 fontSize="5xl" fontWeight="100" sx={{ letterSpacing: 2 }}>
           <Typewriter
             options={{

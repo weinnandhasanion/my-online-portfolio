@@ -1,5 +1,7 @@
 // fonts
-import '@fontsource/roboto-slab';
+import '@fontsource/roboto-slab/400.css';
+import '@fontsource/roboto-slab/600.css';
+import '@fontsource/roboto-slab/900.css';
 
 // rest
 import React from 'react';
@@ -17,6 +19,7 @@ const theme = extendTheme({
     },
   },
   fonts: {
+    heading: `'Roboto Slab', serif`,
     body: `'Roboto Slab', serif`,
   },
   colors: {
