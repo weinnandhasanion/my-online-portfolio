@@ -1,5 +1,4 @@
 import { memo } from 'react';
-import { useRouteContext } from 'components/context';
 import { Link } from 'react-router-dom';
 import { Box, Icon, chakra } from '@chakra-ui/react';
 import { SiGithub } from 'react-icons/si';
@@ -21,18 +20,10 @@ const pages = [
 ];
 
 const NavbarItem = ({ page }) => {
-  const { selectedPage, setPage } = useRouteContext();
-
   return (
-    <chakra.li sx={{ p: '10px', listStyleType: 'none' }}>
-      <Link
-        onClick={() => setPage(page)}
-        to={page === HELLO_PAGE ? '/' : `/${page}`}
-        id={`list-${page}`}
-      >
-        <chakra.span color={selectedPage === page ? 'quinary' : 'secondary'}>
-          {page.toUpperCase()}
-        </chakra.span>
+    <chakra.li sx={{ p: '10px', listStyleType: 'none', color: 'white' }}>
+      <Link to={page === HELLO_PAGE ? '/' : `/${page}`} id={`list-${page}`}>
+        <chakra.span>{page.toUpperCase()}</chakra.span>
       </Link>
     </chakra.li>
   );

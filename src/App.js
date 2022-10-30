@@ -1,22 +1,13 @@
-import {
-  RoutesGenerator,
-  RouteProvider,
-  ThemeProvider,
-} from 'components/context';
+import { ThemeProvider } from 'components/context';
 import { Footer, Navbar } from 'components/layout';
-import { BrowserRouter as Router } from 'react-router-dom';
-import { routes } from 'util/routes';
+import { Outlet } from 'react-router';
 
 function App() {
   return (
     <ThemeProvider>
-      <Router>
-        <RouteProvider>
-          <Navbar />
-          <RoutesGenerator routes={routes} />
-          <Footer />
-        </RouteProvider>
-      </Router>
+      <Navbar />
+      <Outlet />
+      <Footer />
     </ThemeProvider>
   );
 }

@@ -1,7 +1,10 @@
-import { chakra, Box, Button, Heading } from '@chakra-ui/react';
+import { chakra, Box, Button, Heading, Icon } from '@chakra-ui/react';
 import Typewriter from 'typewriter-effect';
 import portrait from 'assets/img/portrait.png';
 import { FRONTEND_DEV, NAME_HEADING, SOFTWARE_ENGR } from 'util/constants';
+import { HiOutlineCloudDownload } from 'react-icons/hi';
+import { BsArrowRight } from 'react-icons/bs';
+import { useNavigate } from 'react-router';
 
 const landingStyle = {
   h: 'auto',
@@ -38,6 +41,8 @@ const LandingSection = () => {
 };
 
 const AboutSection = () => {
+  const navigate = useNavigate();
+
   return (
     <Box as="section" sx={{ backgroundColor: 'quinary' }}>
       <Box sx={{ display: 'flex' }}>
@@ -60,7 +65,7 @@ const AboutSection = () => {
             marginRight: '5rem',
           }}
         >
-          <chakra.p color="white" fontSize="2xl" sx={{}}>
+          <chakra.p color="white" fontSize="2xl">
             I am a 23-year-old software engineer from Cebu, Philippines. After
             being able to work as a developer for over 2 years, I have learned
             not only how to write code, but also to analyze, brainstorm, and
@@ -69,25 +74,26 @@ const AboutSection = () => {
           </chakra.p>
           <Box sx={{ display: 'flex', gap: 5 }}>
             <Button
+              rightIcon={<Icon as={HiOutlineCloudDownload} />}
               variant="outline"
               size="lg"
               sx={{
-                display: 'inline',
                 mt: '3rem',
                 color: 'white',
-                width: 250,
+                width: 'auto',
               }}
             >
               Download my resume
             </Button>
             <Button
+              rightIcon={<Icon as={BsArrowRight} />}
+              onClick={() => navigate('/skills')}
               variant="outline"
               size="lg"
               sx={{
-                display: 'inline',
                 mt: '3rem',
                 color: 'white',
-                width: 250,
+                width: 'auto',
               }}
             >
               View my skills

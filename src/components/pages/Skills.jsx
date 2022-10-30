@@ -1,8 +1,27 @@
+import { SkillContainer } from 'components/shared';
+import { Heading } from '@chakra-ui/react';
 import React from 'react';
+import { skills } from 'util/skills';
+
+const SkillGrid = ({ skills }) => {
+  return skills.map(({ id, ...rest }) => {
+    return <SkillContainer key={id} {...rest} />;
+  });
+};
 
 const Skills = () => {
+  const { SKILLS_COMF } = skills;
+
   return (
     <section id="about">
+      <Heading as="h4" fontWeight="600">
+        Tech I'm comfortable with
+      </Heading>
+      <SkillGrid skills={SKILLS_COMF} />
+      <Heading as="h4" fontWeight="600">
+        Tech I'm familiar with
+      </Heading>
+
       <div id="info">
         <div className="card">
           <p style={{ fontWeight: 'lighter' }}>
